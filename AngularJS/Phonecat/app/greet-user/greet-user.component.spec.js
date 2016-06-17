@@ -2,7 +2,7 @@
 
 describe('greetUser', function() {
 
-	beforeEach(module('phonecatApp'));
+	beforeEach(module('greetUser'));
 	
 	describe('GreetUserController', function() {
 

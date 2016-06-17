@@ -22,6 +22,10 @@
 	<div class="row">
 		<div class="col col-md-12">Total number of phones: {{$ctrl.phones.length}}</div>
 	</div>
+	<div class="row">
+		<div class="col col-md-12">
+			<h3>List in JSON</h3>
+			<pre>{{$ctrl.phones | filter: $ctrl.query | orderBy: $ctrl.orderProp | json}}</pre>
+		</div>
+	</div>
 </div>
-
-

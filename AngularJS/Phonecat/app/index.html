@@ -13,6 +13,8 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
 		<script src="app.js"></script>
+		<script src="phone-list.component.js"></script>
+		<script src="greet-user.component.js"></script>
 <!--    <script src="app.module.js"></script>
     <script src="app.config.js"></script>
     <script src="app.animations.js"></script>
@@ -25,23 +27,10 @@
     <script src="phone-detail/phone-detail.module.js"></script>
     <script src="phone-detail/phone-detail.component.js"></script>-->
   </head>
-  <body ng-controller="PhoneListController as phoneList">
-		<h3>{{phoneList.greeting}}</h3>
-		<ul>
-			<li ng-repeat="phone in phoneList.phones">
-				<span>{{phone.name}}</span>
-				<p>{{phone.snippet}}</p>
-			</li>
-		</ul>
-		
-		<p>Total number of phones: {{phoneList.phones.length}}</p>
-		
-		<table>
-			<tr><th colspan="8">8x8</th></tr>
-			<tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]">
-				<td ng-repeat="j in [0, 1, 2, 3, 4, 5, 6, 7]">{{(i * 8) + (j + 1)}}</td>
-			</tr>
-		</table>
+  <body>
+		<greet-user></greet-user>
+		<phone-list></phone-list>
+		<phone-list></phone-list>
 
   </body>
 </html>

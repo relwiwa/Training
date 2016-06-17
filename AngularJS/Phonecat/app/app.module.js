@@ -2,4 +2,4 @@
 
 // Main Module
 
-angular.module('phonecatApp', ['phoneList', 'greetUser']);
+angular.module('phonecatApp', ['ngRoute', 'phoneList', 'phoneDetail']);

@@ -1,7 +1,21 @@
-<ul>
-	<li ng-repeat="phone in $ctrl.phones">
-		<span>{{phone.name}}</span>
-		<p>{{phone.snippet}}</p>
-	</li>
-<ul>
-<p>Total number of phones: {{$ctrl.phones.length}}</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col col-md-2">
+			<p>Search: <input ng-model="$ctrl.query"/></p>
+			<p ng-show="$ctrl.query !== ''">You searched for: {{$ctrl.query}}</p>
+		</div>
+		<div class="col col-md-10">
+			<ul>
+				<li ng-repeat="phone in $ctrl.phones | filter: $ctrl.query">
+					<span>{{phone.name}}</span>
+					<p>{{phone.snippet}}</p>
+				</li>
+			</ul>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col col-md-12">Total number of phones: {{$ctrl.phones.length}}</div>
+	</div>
+</div>
+
+

@@ -5,6 +5,8 @@ angular.module('phoneList')
 .component('phoneList', {
 	templateUrl: 'phone-list/phone-list.template.html',
 	controller: function PhoneListController() {
+		this.query = '';
+		
 		this.phones = [
 			{
 				name: 'Nexus S',

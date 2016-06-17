@@ -65,16 +65,20 @@ describe('PhoneCat Application', function() {
 		
 	});
 
-/*	describe('View: phoneDetails', function() {
+	describe('View: phoneDetails', function() {
 		
 		beforeEach(function() {
 			browser.get('index.html#!/phones/nexus-s');
 		});
 		
-		it('should display placeholder page with `phone id`', function() {
+		/*it('should display placeholder page with `phone id`', function() {
 			expect(element(by.binding('$ctrl.phoneId')).getText()).toBe('nexus-s');
-		}); 
+		});*/
 		
-	});*/
+		/*it('should display the `nexus-s` page', function() {
+    	expect(element(by.binding('$ctrl.phone.name')).getText()).toBe('Nexus S');
+  	});*/
+		
+	});
 	
 });

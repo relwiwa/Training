@@ -1,0 +1,90 @@
+<img ng-src="{{$ctrl.phone.images[0]}}" class="phone" />
+
+<h1>{{$ctrl.phone.name}}</h1>
+
+<p>{{$ctrl.phone.description}}</p>
+
+<ul class="phone-thumbs">
+	<li ng-repeat="img in $ctrl.phone.images">
+		<img ng-src="{{img}}" />
+	</li>
+</ul>
+
+<ul class="specs">
+	<li>
+		<span>Availability</span>
+		<dl>
+			<dd ng-repeat="availability in $ctrl.phone.availability">{{availability}}</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Battery</span>
+		<dl>
+			<dt>Type</dt>
+			<dd>{{$ctrl.phone.battery.type}}</dd>
+			<dt>Talk Time</dt>
+			<dd>{{$ctrl.phone.battery.talkTime}}</dd>
+			<dt>Standby Time</dt>
+			<dd>{{$ctrl.phone.battery.standbyTime}}</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Camera</span>
+		<dl>
+			<dt>Primary</dt>
+			<dd>{{$ctrl.phone.camera.primary}}</dd>
+			<dt>Features</dt>
+			<dd ng-repeat="feature in $ctrl.phone.camera.features">{{feature}}</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Connectivity</span>
+		<dl>
+			<dt>Wifi</dt>
+			<dd>{{$ctrl.phone.connectivity.wifi}}</dd>
+			<dt>Bluetooth</dt>
+			<dd>{{$ctrl.phone.connectivity.bluetooth}}</dd>
+			<dt>Cell</dt>
+			<dd>{{$ctrl.phone.connectivity.cell}}</dd>
+			<dt>GPS</dt>
+			<dd>{{$ctrl.phone.connectivity.gps}}</dd>
+			<dt>Infrared</dt>
+			<dd>{{$ctrl.phone.connectivity.infrared}}</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Display</span>
+		<dl>
+			<dt>Screen Resolution</dt>
+			<dd>{{$ctrl.phone.display.screenResolution}}</dd>
+			<dt>Screen Size</dt>
+			<dd>{{$ctrl.phone.display.screenSize}}</dd>
+			<dt>Touch Screen</dt>
+			<dd>{{$ctrl.phone.display.touchscreen}}</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Size and Weight</span>
+		<dl>
+			<dt>Dimensions</dt>
+			<dd ng-repeat="dimension in $ctrl.phone.sizeAndWeight.dimensions">{{dimension}}</dd>
+			<dt>Weight</dt>
+			<dd>{{$ctrl.phone.sizeAndWeight.weight}}</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Storage</span>
+		<dl>
+			<dt>Flash</dt>
+			<dd>{{$ctrl.phone.storage.flash}}</dd>
+			<dt>RAM</dt>
+			<dd>{{$ctrl.phone.storage.ram}}</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Additional Features</span>
+		<dl>
+			<dd>{{$ctrl.phone.additionalFeatures}}</dd>
+		</dl>
+	</li>
+</ul>

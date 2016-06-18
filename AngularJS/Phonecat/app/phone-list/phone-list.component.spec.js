@@ -15,10 +15,12 @@ describe('phoneList', function() {
 		}));
 
 		it('should create a `phones` property with 2 phones fetched with `$http`', function() {
-			expect(ctrl.phones).toBeUndefined();
+			jasmine.addCustomEqualityTester(angular.equals);
+			
+			expect(ctrl.phones).toEqual([]);
 			// 'flush' simulated server response making it available
 			$httpBackend.flush();
-			expect(ctrl.phones.length).toBe(2);
+			expect(ctrl.phones).toEqual([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
 		});
 		
 		it('should set a default value for `orderProp`', function() {

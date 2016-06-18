@@ -1,32 +1,38 @@
-/* Animate `ngRepeat` in `phoneList` component */
+/* Animations for ng-repeat directive in phone-list.template */
+
 .phone-list-item.ng-enter,
 .phone-list-item.ng-leave,
 .phone-list-item.ng-move {
-  overflow: hidden;
   transition: 0.5s linear all;
 }
 
 .phone-list-item.ng-enter,
-.phone-list-item.ng-leave.ng-leave-active,
 .phone-list-item.ng-move {
   height: 0;
-  margin-bottom: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.phone-list-item.ng-enter.ng-enter-active,
+.phone-list-item.ng-move.ng-move-active {
+  height: 120px;
+  opacity: 1;
+}
+
+.phone-list-item.ng-leave {
+  opacity: 1;
+  overflow: hidden;
+}
+
+.phone-list-item.ng-leave.ng-leave-active {
+  height: 0;
   opacity: 0;
   padding-bottom: 0;
   padding-top: 0;
 }
 
-.phone-list-item.ng-enter.ng-enter-active,
-.phone-list-item.ng-leave,
-.phone-list-item.ng-move.ng-move-active {
-  height: 120px;
-  margin-bottom: 20px;
-  opacity: 1;
-  padding-bottom: 4px;
-  padding-top: 15px;
-}
+/* Animation for ng-view directive */
 
-/* Animate view transitions with `ngView` */
 .view-container {
   position: relative;
 }
@@ -62,4 +68,30 @@
 @keyframes fade-out {
   from { opacity: 1; }
   to   { opacity: 0; }
+}
+
+/* Animation for large image in phone-details.template */
+
+.phone {
+  background-color: white;
+  display: none;
+  float: left;
+  height: 400px;
+  margin-bottom: 2em;
+  margin-right: 3em;
+  padding: 2em;
+  width: 400px;
+}
+
+.phone:first-child {
+  display: block;
+}
+
+.phone-images {
+  background-color: white;
+  float: left;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  width: 450px;
 }

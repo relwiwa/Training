@@ -1,0 +1,14 @@
+{
+  "name": "program8",
+  "version": "1.0.0",
+  "description": "Solve task 8 with bl module",
+  "main": "program8.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bl": "^1.1.2"
+  }
+}

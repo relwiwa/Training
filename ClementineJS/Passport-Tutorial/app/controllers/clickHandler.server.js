@@ -1,7 +1,8 @@
 'use strict';
 
-function clickHandler (db) {
-  var clicks = db.collection('clicks');
+var Clicks = require('../models/clicks.js');
+
+function ClickHandler () {
 
   return {
     getClicks: getClicks,
@@ -10,11 +11,8 @@ function clickHandler (db) {
   }
 
   function getClicks (req, res) {
-    var clickProjection = {
-      '_id': false
-    };
 
-    clicks.findOne({}, clickProjection, function(err, result) {
+    Clicks.findOne({}).exec(function(err, result) {
       if (err) {
         throw new Error('An error happened getting data from the DB');
       }
@@ -23,56 +21,44 @@ function clickHandler (db) {
         res.json(result);
       }
       else {
-        clicks.insert({
+        var newDoc = new Clicks({
           'clicks': 0
-        }, function(err) {
+        });
+        newDoc.save(function(err, doc) {
           if (err) {
             throw new Error('An error happened inserting initial value to DB');
           }
-
-          clicks.findOne({}, clickProjection, function(err, doc) {
-            if (err) {
-              throw new Error('An error happened getting data from the DB');
-            }
-
-            if (doc) {
-              res.json(doc);
-            }
-          });
+          
+          res.json(doc);
         });
       }
     });
   };
 
   function addClick (req, res) {
-    clicks
-    .findAndModify(
+    Clicks.findOneAndUpdate(
       {},
-      { '_id': 1 },
-      { $inc: { 'clicks': 1 } },
-      function (err, result) {
-        if (err) {
-          throw new Error('Error happened incrementing the click');
-        }
-        res.json(result);
+      { $inc: { 'clicks': 1 }}
+    ).exec(function (err, result) {
+      if (err) {
+        throw new Error('Error happened incrementing the click');
       }
-    );
+      res.json(result);
+    });
   };
 
   function resetClicks (req, res) {
-    clicks
-    .update(
+    Clicks.findOneAndUpdate(
       {},
-      { 'clicks': 0 },
-      function (err, result) {
-        if (err) {
-          throw new Error('Error happened updating clicks');
-        }
-        res.json(result);
+      { 'clicks': 0 }
+    ).exec(function (err, result) {
+      if (err) {
+        throw new Error('Error happened updating clicks');
       }
-    );
+      res.json(result);
+    });
   };
 
 }
 
-module.exports = clickHandler;
+module.exports = ClickHandler;

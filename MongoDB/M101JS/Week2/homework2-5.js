@@ -1,0 +1,5 @@
+db.movieDetails.find({
+  "genres": {
+    $all: ["Comedy", "Crime"]
+  }
+}).count()

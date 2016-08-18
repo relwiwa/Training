@@ -1,0 +1,1 @@
+db.grades.find().sort({"grade": 1}).limit(2).skip(6)

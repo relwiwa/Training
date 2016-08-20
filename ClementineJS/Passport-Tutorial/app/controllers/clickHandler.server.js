@@ -11,6 +11,7 @@ function ClickHandler () {
   }
 
   function getClicks (req, res) {
+    console.log('req.user.github.id', req.user.github.id);
 
     Users.findOne({
       'github.id': req.user.github.id
@@ -18,7 +19,7 @@ function ClickHandler () {
       if (err) {
         throw new Error('An error happened getting data from the DB');
       }
-
+      console.log('clicks sent', result);
       res.json(result.nbrClicks);
     });
   };
@@ -33,6 +34,7 @@ function ClickHandler () {
       if (err) {
         throw new Error('Error happened incrementing the click');
       }
+      console.log('clicks ++', result);
       res.json(result.nbrClicks);
     });
   };
@@ -47,6 +49,7 @@ function ClickHandler () {
       if (err) {
         throw new Error('Error happened updating clicks');
       }
+      console.log("clicks reset");
       res.json(result.nbrClicks);
     });
   };

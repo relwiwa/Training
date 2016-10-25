@@ -12,17 +12,14 @@ export default class Layout extends React.Component {
     };
   }
 
-  render() {
-    setTimeout(() => {
-      this.setState({
-        person: "Bob"
-      });
-    }, 2000);
+  changePerson(person) {
+    this.setState({person});
+  }
 
+  render() {
     return (
       <div>
-        <Header person={this.state.person} />
-        <Header person={"Jill"} />
+        <Header changePerson={this.changePerson.bind(this)} person={this.state.person} />
         <Footer />
       </div>
     );

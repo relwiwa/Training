@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 
-export default class HelloWorldApp extends Component {
+import Bananas from './Components/Bananas';
+import Greeting from './Components/Greeting';
+import HelloWorld from './Components/HelloWorld';
+
+export default class App extends Component {
   render() {
     return (
-      <View>
-        <Text>Hello World!</Text>
+      <View style={{ alignItems: 'center' }}>
+        <HelloWorld />
+        <Bananas />
+        <Greeting name="Rexxar" />
+        <Greeting name="Jaina" />
+        <Greeting name="Valeera" />
       </View>
     );
   }

@@ -9,12 +9,13 @@ import FlexLayout from './Components/FlexLayout';
 import Greeting from './Components/Greeting';
 import HelloWorld from './Components/HelloWorld';
 import LotsOfStyles from './Components/LotsOfStyles';
+import PizzaTranslator from './Components/PizzaTranslator';
 
 export default class App extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ alignItems: 'center' }}>
+{/*         <View style={{ alignItems: 'center' }}>
           <HelloWorld />
           <Bananas />
           <Greeting name="Rexxar" />
@@ -22,10 +23,11 @@ export default class App extends Component {
           <Greeting name="Valeera" />
           <Blink text="Blink Blink" />
           <LotsOfStyles />
-        </View>
+        </View>*/}
         <FixedDimensions />
         <FlexDimensions />
         <FlexLayout />
+        <PizzaTranslator />
       </View>
     );
   }

@@ -3,6 +3,7 @@ import { Image, Text, View } from 'react-native';
 
 import Bananas from './Components/Bananas';
 import Blink from './Components/Blink';
+import Buttons from './Components/Buttons';
 import FlexDimensions from './Components/FlexDimensions';
 import FixedDimensions from './Components/FixedDimensions';
 import FlexLayout from './Components/FlexLayout';
@@ -10,6 +11,7 @@ import Greeting from './Components/Greeting';
 import HelloWorld from './Components/HelloWorld';
 import LotsOfStyles from './Components/LotsOfStyles';
 import PizzaTranslator from './Components/PizzaTranslator';
+import Touchables from './Components/Touchables';
 
 export default class App extends Component {
   render() {
@@ -24,10 +26,12 @@ export default class App extends Component {
           <Blink text="Blink Blink" />
           <LotsOfStyles />
         </View>*/}
-        <FixedDimensions />
+{/*         <FixedDimensions />
         <FlexDimensions />
         <FlexLayout />
-        <PizzaTranslator />
+        <PizzaTranslator /> */}
+        <Buttons />
+        <Touchables />
       </View>
     );
   }

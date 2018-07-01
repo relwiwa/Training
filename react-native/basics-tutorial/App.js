@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Text, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import Bananas from './Components/Bananas';
 import Blink from './Components/Blink';
@@ -16,8 +16,8 @@ import Touchables from './Components/Touchables';
 export default class App extends Component {
   render() {
     return (
-      <View style={{ flex: 1 }}>
-{/*         <View style={{ alignItems: 'center' }}>
+      <ScrollView style={{ flex: 1 }}>
+        <View style={{ alignItems: 'center' }}>
           <HelloWorld />
           <Bananas />
           <Greeting name="Rexxar" />
@@ -25,14 +25,14 @@ export default class App extends Component {
           <Greeting name="Valeera" />
           <Blink text="Blink Blink" />
           <LotsOfStyles />
-        </View>*/}
-{/*         <FixedDimensions />
+        </View>
+        <FixedDimensions />
         <FlexDimensions />
         <FlexLayout />
-        <PizzaTranslator /> */}
+        <PizzaTranslator />
         <Buttons />
         <Touchables />
-      </View>
+      </ScrollView>
     );
   }
 }

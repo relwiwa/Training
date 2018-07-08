@@ -1,0 +1,18 @@
+{
+  "name": "next-egghead",
+  "version": "1.0.0",
+  "description": "Training Next.js via Egghead.io",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "author": "Walter",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^6.1.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}

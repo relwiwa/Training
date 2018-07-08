@@ -3,6 +3,7 @@ import withMaterialUI from '../shared/MaterialUI/withMaterialUI';
 import 'isomorphic-fetch';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
+import Link from 'next/link';
 
 const Index = ({ posts }) =>
 <div>
@@ -11,14 +12,19 @@ const Index = ({ posts }) =>
     <Card key={post.id}>
       <CardHeader title={post.title} />
       <CardText>
-        <RaisedButton label="Click to view post" fullWidth={true} />
+        <RaisedButton fullWidth={true}>
+          <Link href={`/post?id=${post.id}`} as={`/blog/${post.id}`}>
+            <a>
+              Click to view post!
+            </a>
+          </Link>
+        </RaisedButton>
       </CardText>
     </Card>
   )}
 </div>;
 
 Index.getInitialProps = async () => {
-  console.log(process.env.BLOGGER_URL);
   const response = await fetch(`${process.env.BLOGGER_URL}?key=${process.env.API_KEY}`);
   const data = await response.json();
   return { posts: data.items }

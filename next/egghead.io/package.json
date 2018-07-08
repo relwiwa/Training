@@ -6,7 +6,7 @@
   "scripts": {
     "build": "next build",
     "dev": "node server.js",
-    "start": "next start"
+    "start": "set \"NODE_ENV=production\" && node server.js"
   },
   "author": "Walter",
   "license": "ISC",

@@ -8,14 +8,23 @@ import withMaterialUI from '../shared/MaterialUI/withMaterialUI';
 
 const Post = ({ content, title }) => 
 <div>
+  <style jsx>
+    {`
+      .post-link {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+      }
+    `}
+  </style>
   <Header />
   <Card>
     <CardHeader title={title} />
     <CardText>
       <div dangerouslySetInnerHTML={{__html: content }} />
-      <RaisedButton fullWidth={true}>
+      <RaisedButton fullWidth={true} primary>
         <Link href="/" as="/blog">
-          <a>Go back to blog</a>
+          <a className="post-link">Go back to blog</a>
         </Link>
       </RaisedButton>
     </CardText>

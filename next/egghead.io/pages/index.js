@@ -12,9 +12,13 @@ const Index = ({ posts }) =>
     <Card key={post.id}>
       <CardHeader title={post.title} />
       <CardText>
-        <RaisedButton fullWidth={true}>
+        <RaisedButton fullWidth={true} primary>
           <Link href={`/post?id=${post.id}`} as={`/blog/${post.id}`}>
-            <a>
+            <a style={{
+              textDecoration: 'none',
+              fontSize: 18,
+              color: 'white',
+            }}>
               Click to view post!
             </a>
           </Link>

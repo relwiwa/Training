@@ -1,10 +1,27 @@
 import Header from '../components/Header';
 import withMaterialUI from '../shared/MaterialUI/withMaterialUI';
+import 'isomorphic-fetch';
+import { Card, CardHeader, CardText } from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
 
-const Index = ({ title = 'Hello from Next.js' }) =>
+const Index = ({ posts }) =>
 <div>
   <Header />
-  <h2>{title}</h2>
+  {posts.map(post => 
+    <Card key={post.id}>
+      <CardHeader title={post.title} />
+      <CardText>
+        <RaisedButton label="Click to view post" fullWidth={true} />
+      </CardText>
+    </Card>
+  )}
 </div>;
+
+Index.getInitialProps = async () => {
+  console.log(process.env.BLOGGER_URL);
+  const response = await fetch(`${process.env.BLOGGER_URL}?key=${process.env.API_KEY}`);
+  const data = await response.json();
+  return { posts: data.items }
+}
 
 export default withMaterialUI(Index);
